@@ -8,6 +8,9 @@ module.exports = regexPatterns = [
     'scored',
     'triggered',
     'connected,',
-    'map', 
+    'map',
+    'suicide',
+    'shutdown\u0000',
+    'closed\u0000',
     'cvar'
 ];

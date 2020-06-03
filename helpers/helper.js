@@ -365,6 +365,79 @@ const mapStarted = items => {
   };
 };
 
+const suicide = line => {
+
+  const items = line.match(
+    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): "(.+)<(\d+)><(.+)><(.+)>" committed suicide with "(.+)" \(world\)/i
+  );
+
+  return {
+    event: "suicide",
+    triggerType: items[11],
+    player: {
+      name: items[7],
+      id: items[8],
+      steamid: items[9],
+      team: items[10],
+    },
+    time: {
+      ss: items[6],
+      mm: items[5],
+      hh: items[4]
+    },
+    date: {
+      dd: items[2],
+      mm: items[1],
+      yy: items[3]
+    }
+  };
+};
+
+
+const shutdown = line => {
+
+  const items = line.match(
+    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): Server shutdown/
+  );
+
+  return {
+    event: "shutdown",
+    time: {
+      ss: items[6],
+      mm: items[5],
+      hh: items[4]
+    },
+    date: {
+      dd: items[2],
+      mm: items[1],
+      yy: items[3]
+    }
+  };
+};
+
+const closed = line => {
+
+  const items = line.match(
+    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): Log file closed/
+  );
+
+  return {
+    event: "log_off",
+    time: {
+      ss: items[6],
+      mm: items[5],
+      hh: items[4]
+    },
+    date: {
+      dd: items[2],
+      mm: items[1],
+      yy: items[3]
+    }
+  };
+};
+
+
+
 const cvar = (line) => {
     //log L 12/16/2019 - 22:20:09: Server cvar "mp_friendlyfire" = "0"
     const items = line.match(
@@ -389,6 +462,8 @@ module.exports = {
   triggered: triggerChoose,
   "connected,": connect,
   map: mapChoose,
+  suicide,
+  shutdown,
+  closed,
   cvar,
-
 };

@@ -51,14 +51,20 @@ And thats it.
 | player_action | :white_check_mark: | Action by player ex bomb pickup, drop, start defusing, stop defusing etc                                                       |
 | map_change    | :white_check_mark: | Info who changed map and which map is next                                                                                     |
 | map_start     | :white_check_mark: | Info when map is fully loaded                                                                                                  |
-| cvar          |         :x:        | Map cvars // TODO      
-
+| suicide       | :white_check_mark: | Player makes suicide (some plugins dont respect this type, but it will be implemented)                                         |
+| shutdown      | :white_check_mark: | Singnal server shutdown                                                                                                        |
+| log_off       | :white_check_mark: | Server stopped logging                                                                                                         |
+| kick          |         :x:        | Kick from the server // TODO                                                                                                   |
+| ban           |         :x:        | Ban from the server // TODO                                                                                                    |
+| cvar          |         :x:        | Map cvars // TODO     
 
 ### Development
 
 Want to contribute? Great!
 
 ### Known bugs
+
+See [issues](https://github.com/kallefrombosnia/hlds-log/issues).
 
 ### Todos
 

@@ -57,12 +57,16 @@ class HLDS_Log extends EventEmitter {
   }
 
   regexSearch(array, line) { 
-    regexInput.forEach((parameter) => {
-      if (array.includes(parameter)) {
-        const type = helper[parameter.replace(/\0.*$/g, "")](line);
-        this.emit(type.event, type);
-      }
-    });
+    try{
+      regexInput.forEach((parameter) => {
+        if (array.includes(parameter)) {
+          const type = helper[parameter.replace(/\0.*$/g, "")](line);
+          this.emit(type.event, type);
+        }
+      });
+    } catch (error) {
+      console.error('Error spotted: ' + error);
+    }
   }
 
   setCvars(cvarName, cvarValue) {

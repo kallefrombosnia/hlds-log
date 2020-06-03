@@ -70,3 +70,15 @@ logger.on('map_change', info => {
 logger.on('map_start', info => {
     console.log(info);
 });
+
+logger.on('suicide', info => {
+    console.log(info);
+});
+
+logger.on('shutdown', info => {
+    console.log(info);
+});
+
+logger.on('log_off', info => {
+    console.log(info);
+});
