@@ -1,6 +1,8 @@
 # HLDS logger :bomb:
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![GitHub issues](https://img.shields.io/github/issues/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log/issues)
+[![GitHub forks](https://img.shields.io/github/forks/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log/network)
+[![GitHub license](https://img.shields.io/github/license/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log)
 
 HLDS log is nodejs package for advanced usage of remote HLDS server logging.
 
