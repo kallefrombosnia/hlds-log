@@ -3,7 +3,7 @@
 const killAction = line => {
   // log L 12/01/2019 - 18:22:48: "Rock<21><BOT><TERRORIST>" killed "Gunner<12><BOT><CT>" with "glock18"
   const items = line.match(
-    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): "(.+)<(\d+)><(.+)><([A-Z]+)>" killed "(.+)<(\d+)><(.+)><([A-Z]+)>" with "(.+)/i
+    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): "(.+)<(\d+)><(.+)><([A-Z]+)>" killed "(.+)<(\d+)><(.+)><([A-Z]+)>" with "(.+)"rs/i
   );
 
   return {
@@ -13,7 +13,7 @@ const killAction = line => {
       id: items[8],
       steamid: items[9],
       side: items[10],
-      weapon: items[15]
+      weapon: items[15].toString().replace(/\0[\s\S]*$/g,'')
     },
     victim: {
       name: items[11],

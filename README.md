@@ -31,7 +31,11 @@ HLDS log requires [Node.js](https://nodejs.org/) v10+ to run.
 ```sh
 $ npm install hlds-log
 ```
-
+On the server side type 
+```sh
+log on
+logaddress 127.0.0.1 27050; [remote ip] [port]
+```
 And thats it.
 
 
@@ -63,6 +67,7 @@ And thats it.
 ### Development
 
 Want to contribute? Great!
+Also leave a :star: if you like this project.
 
 ### Known bugs
 
@@ -73,6 +78,7 @@ See [issues](https://github.com/kallefrombosnia/hlds-log/issues).
  - Write tests
  - Write more examples
  - Finish TODO's
+ - Add TypeScript support
 
 License
 ----

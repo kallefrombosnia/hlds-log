@@ -16,12 +16,10 @@ class HLDS_Log extends EventEmitter {
   }
 
   start() {
-
     this.onError();
     this.messageParser();
     this.listenSocket();
     this.bindPort(this.port);
-
   }
 
   onError() {
