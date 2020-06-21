@@ -1,4 +1,4 @@
-module.exports = regexPatterns = [
+export default [
     'killed', 
     'say',
     'say_team',

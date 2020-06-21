@@ -1,8 +1,9 @@
 {
   "name": "hlds-log",
   "version": "1.1.0",
-  "description": "HLDS remote log parser in node.js",
+  "description": "HLDS log is nodejs package for advanced usage of remote HLDS server logging.",
   "main": "app.js",
+  "files": ["lib/**/*"],
   "dependencies": {
     "ansi-styles": "^4.2.1",
     "aws4": "^1.10.0",
@@ -10,8 +11,8 @@
     "balanced-match": "^1.0.0",
     "browser-process-hrtime": "^1.0.0",
     "buffer-from": "^1.1.1",
-    "camelcase": "^5.3.1",
     "callsites": "^3.1.0",
+    "camelcase": "^5.3.1",
     "caseless": "^0.12.0",
     "char-regex": "^1.0.2",
     "co": "^4.6.0",
@@ -20,13 +21,16 @@
     "color-name": "^1.1.4"
   },
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
   "author": "Izet Mulalic",
-  "license": "ISC"
+  "license": "MIT"
 }

@@ -1,8 +1,6 @@
 # HLDS logger :bomb:
 
-[![GitHub issues](https://img.shields.io/github/issues/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log/issues)
-[![GitHub forks](https://img.shields.io/github/forks/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log/network)
-[![GitHub license](https://img.shields.io/github/license/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log)
+[![GitHub issues](https://img.shields.io/github/issues/kallefrombosnia/hlds-log)](https://github.com/kallefrombosnia/hlds-log/issues) ![npm](https://img.shields.io/npm/dw/hlds-log) [![npm version](http://img.shields.io/npm/v/hlds-log.svg?style=flat)](https://npmjs.org/package/hlds-log "View this project on npm")
 
 HLDS log is nodejs package for advanced usage of remote HLDS server logging.
 
@@ -12,6 +10,7 @@ HLDS log provides you:
   - event based system
 
 Example of server event invoked by client chat:
+
 ``` log L 05/31/2020 - 11:08:13: "kalle<1><STEAM_ID_LAN><CT>" say "hello"```
 
 ```js
@@ -26,7 +25,9 @@ Example of server event invoked by client chat:
   date: { dd: '31', mm: '05', yy: '2020' } } 
 ```
 ### Installation
-HLDS log requires [Node.js](https://nodejs.org/) v10+ to run.
+HLDS log requires [Node.js](https://nodejs.org/) v6+ to run.
+
+[NPM module](https://npmjs.org/package/hlds-log)
 
 ```sh
 $ npm install hlds-log
@@ -58,7 +59,7 @@ And thats it.
 | map_change    | :white_check_mark: | Info who changed map and which map is next                                                                                     |
 | map_start     | :white_check_mark: | Info when map is fully loaded                                                                                                  |
 | suicide       | :white_check_mark: | Player makes suicide (some plugins dont respect this type, but it will be implemented)                                         |
-| shutdown      | :white_check_mark: | Singnal server shutdown                                                                                                        |
+| shutdown      | :white_check_mark: | Signal server shutdown                                                                                                        |
 | log_off       | :white_check_mark: | Server stopped logging                                                                                                         |
 | kick          |         :x:        | Kick from the server // TODO                                                                                                   |
 | ban           |         :x:        | Ban from the server // TODO                                                                                                    |

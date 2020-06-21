@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 
-//const {HLDS_Log}= require('hlds-log');
-const HLDS_Log = require('../app');
+const {HLDS_Log}= require('hlds-log');
+//const {HLDS_Log} = require('../lib/app');
 
 logger = new HLDS_Log(27050, true);
 
@@ -82,3 +82,11 @@ logger.on('shutdown', info => {
 logger.on('log_off', info => {
     console.log(info);
 });
+
+logger.on('cvarsDone', info => {
+    console.log(info);
+});
+
+logger.on('error', error =>{
+    console.log('Error spotted: ', error)
+})
