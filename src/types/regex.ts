@@ -1,4 +1,4 @@
-module.exports = regexPatterns = [
+export = [
     'killed', 
     'say',
     'say_team',
@@ -12,5 +12,6 @@ module.exports = regexPatterns = [
     'suicide',
     'shutdown\u0000',
     'closed\u0000',
-    'cvar'
+    'cvar',
+    'kicked'
 ];
