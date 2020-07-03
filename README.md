@@ -61,9 +61,8 @@ And thats it.
 | suicide       | :white_check_mark: | Player makes suicide (some plugins dont respect this type, but it will be implemented)                                         |
 | shutdown      | :white_check_mark: | Signal server shutdown                                                                                                        |
 | log_off       | :white_check_mark: | Server stopped logging                                                                                                         |
-| kick          |         :x:        | Kick from the server // TODO                                                                                                   |
-| ban           |         :x:        | Ban from the server // TODO                                                                                                    |
-| cvar          |         :x:        | Map cvars // TODO     
+| kick          |         :white_check_mark:        | Kick from the server                                                                                                                                   |
+| cvarsDone         |       :white_check_mark:         | All map cvars on map start (emit after specific time because game server sends randomly cvar values). Also cvars are always availble in `Logger.cvarList` property to get values.
 
 ### Development
 
@@ -78,7 +77,6 @@ See [issues](https://github.com/kallefrombosnia/hlds-log/issues).
 
  - Write tests
  - Write more examples
- - Finish TODO's
  - Add TypeScript support
 
 License

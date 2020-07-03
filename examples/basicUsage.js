@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 
-const {HLDS_Log}= require('hlds-log');
-//const {HLDS_Log} = require('../lib/app');
+//const {HLDS_Log}= require('hlds-log');
+const {HLDS_Log} = require('../lib/app');
 
 logger = new HLDS_Log(27050, true);
 
@@ -84,6 +84,10 @@ logger.on('log_off', info => {
 });
 
 logger.on('cvarsDone', info => {
+    console.log(info);
+});
+
+logger.on('kick', info => {
     console.log(info);
 });
 

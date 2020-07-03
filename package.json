@@ -1,6 +1,6 @@
 {
   "name": "hlds-log",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "HLDS log is nodejs package for advanced usage of remote HLDS server logging.",
   "main": "app.js",
   "files": ["lib/**/*"],
@@ -30,6 +30,10 @@
     "build": "tsc",
     "dev": "nodemon app.js",
     "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kallefrombosnia/hlds-log.git"
   },
   "author": "Izet Mulalic",
   "license": "MIT"

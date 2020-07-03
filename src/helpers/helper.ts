@@ -13,6 +13,7 @@ interface EventObject {
   triggerType?: string,
   cvarName?: string,
   cvarValue?: string,
+  kickInvoker?: string,
 }
 
 interface KillerType {
@@ -437,7 +438,7 @@ const mapStarted = (items: Array<string>) : Object  => {
 const suicide = (line: String) : EventObject | null => {
 
   const items = line.match(
-    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): "(.+)<(\d+)><(.+)><(.+)>" committed suicide with "(.+)" \(world\)/i
+    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): "(.+)<(\d+)><(.+)><(.+)>" committed suicide with "(.+)"/i
   );
 
   if(!items) return null;
@@ -529,6 +530,38 @@ const cvar = (line: String) : EventObject | null  => {
     };
 };
 
+
+const kick = (line: String) : EventObject | null => {
+
+  // log L 07/01/2020 - 22:18:59: Kick: "Bot1g<4><STEAM_ID_LAN><>" was kicked by "kalle"
+
+  const items = line.match(
+    /log L ([0-9]{2})\/([0-9]{2})\/([0-9]{4}) - ([01]?\d|2[0-3]):([0-5]\d):([0-5]\d): Kick: "(.+)<(\d+)><(.+)><>" was kicked by "(.+)"/i
+  );
+
+  if(!items) return null;
+
+  return {
+    event: "kick",
+    kickInvoker: items[10],
+    player: {
+      name: items[7],
+      id: items[8],
+      steamid: items[9],
+    },
+    time: {
+      ss: items[6],
+      mm: items[5],
+      hh: items[4]
+    },
+    date: {
+      dd: items[2],
+      mm: items[1],
+      yy: items[3]
+    }
+  };
+};
+
 module.exports = {
   killed: killAction,
   say,
@@ -544,4 +577,5 @@ module.exports = {
   shutdown,
   closed: _closed,
   cvar,
+  kicked: kick,
 };

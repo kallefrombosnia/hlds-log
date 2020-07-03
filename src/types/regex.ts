@@ -1,4 +1,4 @@
-export default [
+export = [
     'killed', 
     'say',
     'say_team',
@@ -12,5 +12,6 @@ export default [
     'suicide',
     'shutdown\u0000',
     'closed\u0000',
-    'cvar'
+    'cvar',
+    'kicked'
 ];

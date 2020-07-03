@@ -28,7 +28,7 @@ class HLDS_Log extends EventEmitter {
     this.bindPort(this.port);
 
     this.once("_cvar", (info: String) => {
-      setTimeout(emit =>{
+      setTimeout(() =>{
         this.emit('cvarsDone', {cvars: this.cvarList});
       }, this.cvarEmitWaitTime);
     });
