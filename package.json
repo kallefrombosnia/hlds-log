@@ -21,7 +21,7 @@
     "color-name": "^1.1.4"
   },
   "devDependencies": {
-    "jest": "^26.0.1",
+    "jest": "^29.7.0",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
   },
